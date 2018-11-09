@@ -20,6 +20,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h> // by pemre
 #include "neaacdec.h"
 
 // todo:
@@ -73,7 +74,8 @@ sprintf(filename,"%s-pure-adts.aac",argv[2]);
 FILE *out_aac=fopen(filename,"wb");
 free(filename);
 
-int blocksize=10000000;
+// int blocksize=10000000; increased by fmogollonr
+int blocksize=1000000000;
 
 uint8_t *buf=malloc(blocksize);
 uint8_t *tmp=malloc(100000); // 8192+7
@@ -114,8 +116,7 @@ channels*2,
 
 fwrite(&header,1,sizeof(header),out_pcm);
 
-static uid=0;
-
+static int uid=0; // pemre
 int size=0;
 
 
