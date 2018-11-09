@@ -4,7 +4,7 @@ $block=2000000; # size of block
 $block_count=35; # how many pieces you want
 
 # change files paths
-open(dd,"some_good_pron.mp4");
+open(dd,"sample.mp4");
 open(oo,">montage2.bad");
 
 binmode(dd);
